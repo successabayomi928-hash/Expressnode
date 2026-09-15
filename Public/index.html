@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Merizon Global is a practical tech school for ambitious builders. Learn skills that move with the world.">
+	<title>MERIZON GLOBAL | Build what is next</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="page">
+		<div class="topline"></div>
+		<header>
+			<div class="container nav">
+				<a class="brand" href="#top" aria-label="Merizon Global home"> MERIZON GLOBAL</a>
+				<nav class="nav-links" id="navLinks">
+					<a href="#programs">Programs</a>
+					<a href="#story">Our approach</a>
+					<a href="#contact">Contact</a>
+				</nav>
+				<a class="nav-cta" href="#programs">Explore learning <span>↗</span></a>
+				<button class="menu" id="menuButton" aria-label="Toggle menu" aria-expanded="false">☰</button>
+			</div>
+		</header>
+
+		<main id="top">
+			<section class="container hero">
+				<div class="hero-content">
+					<div class="eyebrow">Independent tech school / Est. 2018</div>
+					<h1>Build what is <em>next.</em></h1>
+					<p class="hero-copy">A global school for the curious. Learn the technical skills, creative confidence, and clear thinking to shape a changing world.</p>
+					<div class="hero-actions">
+						<a class="button button-primary" href="#programs">Find your program <span class="arrow">↗</span></a>
+						<a class="button button-ghost" href="#story">Why Merizon <span>→</span></a>
+					</div>
+				</div>
+				<div class="hero-art" aria-label="Student working in a technology lab">
+					<img class="hero-image" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=85" alt="Students collaborating around a laptop">
+					<div class="art-card"><span>Learning in motion</span><strong>Ideas<br>into impact.</strong><span>01 / 04</span></div>
+					<div class="orbit" aria-hidden="true"></div>
+				</div>
+			</section>
+	<script>
+		const menuButton = document.getElementById('menuButton');
+		const navLinks = document.getElementById('navLinks');
+		menuButton.addEventListener('click', () => {
+			const isOpen = navLinks.classList.toggle('open');
+			menuButton.setAttribute('aria-expanded', isOpen);
+			menuButton.textContent = isOpen ? '×' : '☰';
+		});
+		navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+			navLinks.classList.remove('open');
+			menuButton.setAttribute('aria-expanded', 'false');
+			menuButton.textContent = '☰';
+		}));
+	</script>
+</body>
+</html>
